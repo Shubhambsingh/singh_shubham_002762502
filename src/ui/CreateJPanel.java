@@ -4,7 +4,9 @@
  */
 package ui;
 
+import javax.swing.JOptionPane;
 import model.EmpDirectory;
+import model.EmpDirectoryHistory;
 
 /**
  *
@@ -15,10 +17,10 @@ public class CreateJPanel extends javax.swing.JPanel {
     /**
      * Creates new form CreateJPanel
      */
-    EmpDirectory empdir;
-    public CreateJPanel(EmpDirectory empdir) {
+    EmpDirectoryHistory history;
+    public CreateJPanel(EmpDirectoryHistory history) {
         initComponents();
-        this.empdir = empdir;
+        this.history = history;
     }
 
     /**
@@ -148,19 +150,15 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblName)
                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lblEmpid)
-                        .addGap(40, 40, 40))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtEmpId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblAge))
-                        .addGap(12, 12, 12)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtEmpId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblEmpid))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAge))
+                .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblGender))
@@ -211,7 +209,34 @@ public class CreateJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_txtEmpIdActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        // TODO add your handling code here:
+EmpDirectory emp = history.addNewEmp();
+String Name= txtName.getText() ;
+emp.setName(Name);
+emp.setEmpid(txtEmpId.getText()) ;
+emp.setAge(txtAge.getText()) ;
+emp.setCell_number(txtCellNumber.getText()) ;
+emp.setEmail_address(txtEmailAddress.getText()) ;
+emp.setGender(txtGender.getText()) ;
+emp.setLevel(txtLevel.getText()) ;
+emp.setPhoto(txtPhoto.getText()) ;
+emp.setPosition_title(txtPositionTitle.getText()) ;
+emp.setStart_date(txtStartDate.getText()) ;
+emp.setTeaminfo(txtTeamInfo.getText()) ;
+
+JOptionPane.showMessageDialog(this,"Employee Information is Saved.");// TODO add your handling code here:
+txtName.setText("");
+txtEmpId.setText("");
+txtAge.setText("");
+txtCellNumber.setText("");
+txtEmailAddress.setText("");
+txtGender.setText("");
+txtLevel.setText("");
+txtPhoto.setText("");
+txtPositionTitle.setText("");
+txtStartDate.setText("");
+txtTeamInfo.setText("");
+
+
     }//GEN-LAST:event_btnSaveActionPerformed
 
 

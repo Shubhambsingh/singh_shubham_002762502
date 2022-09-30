@@ -4,7 +4,7 @@
  */
 package ui;
 
-import model.EmpDirectory;
+import model.EmpDirectoryHistory;
 
 /**
  *
@@ -16,12 +16,14 @@ public class MainJFrame extends javax.swing.JFrame {
      * Creates new form MainJFrame
      */
     
-    EmpDirectory empdir;
+    //EmpDirectory empdir;
+    EmpDirectoryHistory history;
     
     public MainJFrame() {
         initComponents();
         
-        empdir = new EmpDirectory();
+        //empdir = new EmpDirectory();
+        history = new EmpDirectoryHistory();
         
     }
 
@@ -122,7 +124,10 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
-        CreateJPanel createPanel = new CreateJPanel(empdir);
+        //CreateJPanel createPanel = new CreateJPanel(empdir);
+        //splitpane.setRightComponent(createPanel);
+        
+        CreateJPanel createPanel = new CreateJPanel(history);
         splitpane.setRightComponent(createPanel);
     }//GEN-LAST:event_btnCreateActionPerformed
 
