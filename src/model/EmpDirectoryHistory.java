@@ -29,4 +29,8 @@ public class EmpDirectoryHistory {
         history.add(newEmp);
         return newEmp;
     }
+    
+    public void deleteEmp(EmpDirectory ed){
+        history.remove(ed);
+    }
 }

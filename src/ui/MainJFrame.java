@@ -56,6 +56,11 @@ public class MainJFrame extends javax.swing.JFrame {
         btnUpdate.setText("Update");
 
         btnRead.setText("Read");
+        btnRead.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReadActionPerformed(evt);
+            }
+        });
 
         btnDelete.setText("Delete");
 
@@ -130,6 +135,12 @@ public class MainJFrame extends javax.swing.JFrame {
         CreateJPanel createPanel = new CreateJPanel(history);
         splitpane.setRightComponent(createPanel);
     }//GEN-LAST:event_btnCreateActionPerformed
+
+    private void btnReadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReadActionPerformed
+        // TODO add your handling code here:
+        ReadJPanel readPanel = new ReadJPanel(history);
+        splitpane.setRightComponent(readPanel);
+    }//GEN-LAST:event_btnReadActionPerformed
 
     /**
      * @param args the command line arguments

@@ -4,6 +4,11 @@
  */
 package ui;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.EmpDirectory;
+import model.EmpDirectoryHistory;
+
 /**
  *
  * @author USHA SINGH
@@ -13,8 +18,12 @@ public class ReadJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ReadJPanel
      */
-    public ReadJPanel() {
+    
+        EmpDirectoryHistory history;
+    public ReadJPanel(EmpDirectoryHistory history) {
         initComponents();
+        this.history = history;
+        populateTable();
     }
 
     /**
@@ -26,43 +35,203 @@ public class ReadJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblTitle = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblData = new javax.swing.JTable();
+        btnDelete = new javax.swing.JButton();
+        btnView = new javax.swing.JButton();
+        lblCellNumber = new javax.swing.JLabel();
+        txtCellNumber = new javax.swing.JTextField();
+        lblEmailAddress = new javax.swing.JLabel();
+        txtEmailAddress = new javax.swing.JTextField();
+        lblPhoto = new javax.swing.JLabel();
+        txtPhoto = new javax.swing.JTextField();
+        lblName = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        lblEmpid = new javax.swing.JLabel();
+        txtAge = new javax.swing.JTextField();
+        lblAge = new javax.swing.JLabel();
+        txtGender = new javax.swing.JTextField();
+        lblGender = new javax.swing.JLabel();
+        txtStartDate = new javax.swing.JTextField();
+        lblStartDate = new javax.swing.JLabel();
+        txtLevel = new javax.swing.JTextField();
+        lblLevel = new javax.swing.JLabel();
+        txtTeamInfo = new javax.swing.JTextField();
+        lblTeaminfo = new javax.swing.JLabel();
+        txtEmpId = new javax.swing.JTextField();
+        lblPositionTitle = new javax.swing.JLabel();
+        txtPositionTitle = new javax.swing.JTextField();
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setText("View");
+        add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 173, -1));
+
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(600, 402));
+
+        tblData.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "EmpID", "Name", "Age", "Gender", "Start Date", "Level", "Team Info", "Position Title", "Cell Phone number", "Email", "Photo"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false
+            };
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(124, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
-        );
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblData);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 43, 915, 178));
+
+        btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+        add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 227, -1, -1));
+
+        btnView.setText("View");
+        add(btnView, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 227, -1, -1));
+
+        lblCellNumber.setText("Cell Phone Number");
+        add(lblCellNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 516, 275, -1));
+        add(txtCellNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 513, 206, -1));
+
+        lblEmailAddress.setText("Email Address");
+        add(lblEmailAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 541, 275, -1));
+        add(txtEmailAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 541, 206, -1));
+
+        lblPhoto.setText("Photo");
+        add(lblPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 569, 275, -1));
+        add(txtPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 569, 206, -1));
+
+        lblName.setText("Name");
+        add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 265, 275, -1));
+        add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 262, 206, -1));
+
+        lblEmpid.setText("Employee ID");
+        add(lblEmpid, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 293, 275, -1));
+        add(txtAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 318, 206, -1));
+
+        lblAge.setText("Age");
+        add(lblAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 321, 275, -1));
+        add(txtGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 349, 206, -1));
+
+        lblGender.setText("Gender");
+        add(lblGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 352, 275, -1));
+        add(txtStartDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 380, 206, -1));
+
+        lblStartDate.setText("Start Date");
+        add(lblStartDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 380, 275, -1));
+        add(txtLevel, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 414, 206, -1));
+
+        lblLevel.setText("Level");
+        add(lblLevel, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 414, 275, -1));
+        add(txtTeamInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 444, 206, -1));
+
+        lblTeaminfo.setText("Team Info");
+        add(lblTeaminfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 450, 275, -1));
+
+        txtEmpId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmpIdActionPerformed(evt);
+            }
+        });
+        add(txtEmpId, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 290, 206, -1));
+
+        lblPositionTitle.setText("Position Title");
+        add(lblPositionTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 485, 275, -1));
+        add(txtPositionTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(298, 472, 206, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtEmpIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmpIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmpIdActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = tblData.getSelectedRow() ;
+        if(selectedRowIndex<0) {
+            JOptionPane.showMessageDialog(this , "Please Select a row to be deleted");
+            return; 
+        }
+        
+        DefaultTableModel model = (DefaultTableModel) tblData.getModel();
+        EmpDirectory selectedEmp = (EmpDirectory) model.getValueAt(selectedRowIndex, 0);
+        
+        history.deleteEmp (selectedEmp);
+        JOptionPane.showMessageDialog(this , "Employee Data Deleted.");
+        
+        populateTable();
+
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnView;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblAge;
+    private javax.swing.JLabel lblCellNumber;
+    private javax.swing.JLabel lblEmailAddress;
+    private javax.swing.JLabel lblEmpid;
+    private javax.swing.JLabel lblGender;
+    private javax.swing.JLabel lblLevel;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblPhoto;
+    private javax.swing.JLabel lblPositionTitle;
+    private javax.swing.JLabel lblStartDate;
+    private javax.swing.JLabel lblTeaminfo;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JTable tblData;
+    private javax.swing.JTextField txtAge;
+    private javax.swing.JTextField txtCellNumber;
+    private javax.swing.JTextField txtEmailAddress;
+    private javax.swing.JTextField txtEmpId;
+    private javax.swing.JTextField txtGender;
+    private javax.swing.JTextField txtLevel;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtPhoto;
+    private javax.swing.JTextField txtPositionTitle;
+    private javax.swing.JTextField txtStartDate;
+    private javax.swing.JTextField txtTeamInfo;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+
+        DefaultTableModel model = (DefaultTableModel) tblData.getModel();
+        model.setRowCount(0);
+        
+        for (EmpDirectory ed : history.getHistory()){
+            Object[] row = new Object [11];
+            row[0] = ed;
+            row[1] = ed.getName();
+            row[2] = ed.getAge();
+            row[3] = ed.getGender();
+            row[4] = ed.getStart_date();
+            row[5] = ed.getLevel();
+            row[6] = ed.getTeaminfo();
+            row[7] = ed.getPosition_title();
+            row[8] = ed.getCell_number();
+            row[9] = ed.getEmail_address();
+            row[10] = ed.getPhoto();
+            
+            model.addRow(row);
+
+            
+        }
+    }
 }
