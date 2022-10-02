@@ -44,8 +44,8 @@ public class MainJFrame extends javax.swing.JFrame {
         WorkArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(600, 400));
 
+        controlPanel.setBackground(new java.awt.Color(102, 102, 102));
         controlPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         controlPanel.setPreferredSize(new java.awt.Dimension(900, 200));
 
@@ -101,6 +101,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
         splitpane.setLeftComponent(controlPanel);
         controlPanel.getAccessibleContext().setAccessibleName("");
+
+        WorkArea.setBackground(new java.awt.Color(204, 255, 255));
 
         javax.swing.GroupLayout WorkAreaLayout = new javax.swing.GroupLayout(WorkArea);
         WorkArea.setLayout(WorkAreaLayout);
