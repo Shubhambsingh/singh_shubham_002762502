@@ -39,9 +39,7 @@ public class MainJFrame extends javax.swing.JFrame {
         splitpane = new javax.swing.JSplitPane();
         controlPanel = new javax.swing.JPanel();
         btnCreate = new javax.swing.JButton();
-        btnUpdate = new javax.swing.JButton();
         btnRead = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,16 +51,12 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        btnUpdate.setText("Update");
-
         btnRead.setText("Read");
         btnRead.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnReadActionPerformed(evt);
             }
         });
-
-        btnDelete.setText("Delete");
 
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
@@ -72,29 +66,23 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnCreate)
-                    .addComponent(btnUpdate)
-                    .addComponent(btnRead)
-                    .addComponent(btnDelete))
+                    .addComponent(btnRead))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        controlPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCreate, btnDelete, btnRead, btnUpdate});
+        controlPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCreate, btnRead});
 
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(btnCreate)
-                .addGap(18, 18, 18)
-                .addComponent(btnUpdate)
-                .addGap(18, 18, 18)
+                .addGap(59, 59, 59)
                 .addComponent(btnRead)
-                .addGap(18, 18, 18)
-                .addComponent(btnDelete)
-                .addContainerGap(306, Short.MAX_VALUE))
+                .addContainerGap(347, Short.MAX_VALUE))
         );
 
-        controlPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCreate, btnDelete, btnRead, btnUpdate});
+        controlPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCreate, btnRead});
 
         splitpane.setLeftComponent(controlPanel);
 
@@ -179,9 +167,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
-    private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnRead;
-    private javax.swing.JButton btnUpdate;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JSplitPane splitpane;
     private javax.swing.JPanel workArea;
