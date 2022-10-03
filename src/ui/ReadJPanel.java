@@ -435,18 +435,6 @@ public class ReadJPanel extends javax.swing.JPanel {
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
         
-        txtName.setText("");
-        txtEmpId.setText("");
-        txtAge.setText("");
-        txtCellNumber.setText("");
-        txtEmailAddress.setText("");
-        txtGender.setText("");
-        txtLevel.setText("");
-        //txtPhoto.setText("");
-        lblImage.setIcon(resize_image(null));
-        txtPositionTitle.setText("");
-        txtStartDate.setText("");
-        txtTeamInfo.setText("");
 
             
         int selectedRowIndex = tblData.getSelectedRow() ;
@@ -461,13 +449,27 @@ public class ReadJPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(this , "Employee Data Deleted.");
         
         populateTable();
+        
+        txtName.setText("");
+        txtEmpId.setText("");
+        txtAge.setText("");
+        txtCellNumber.setText("");
+        txtEmailAddress.setText("");
+        txtGender.setText("");
+        txtLevel.setText("");
+        //txtPhoto.setText("");
+        lblImage.setIcon(resize_image(null));
+        txtPositionTitle.setText("");
+        txtStartDate.setText("");
+        txtTeamInfo.setText("");
+
 
     }//GEN-LAST:event_btnDeleteActionPerformed
         public ImageIcon resize_image(String image_path)
         {
         ImageIcon image_icon = new ImageIcon(image_path);
         Image img = image_icon.getImage();
-        Image new_image = img.getScaledInstance(300,144,Image.SCALE_SMOOTH);
+        Image new_image = img.getScaledInstance(300,300,Image.SCALE_SMOOTH);
         ImageIcon new_image_icon = new ImageIcon(new_image);
         return new_image_icon;
         }
@@ -562,6 +564,7 @@ public class ReadJPanel extends javax.swing.JPanel {
             model.setValueAt(photo, tblData.getSelectedRow(), 10);
             
             JOptionPane.showMessageDialog(this , "Employee Record Updated Sucessfully!");
+            populateTable();
             txtName.setText("");
             txtEmpId.setText("");
             txtAge.setText("");
