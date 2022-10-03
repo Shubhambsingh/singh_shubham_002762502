@@ -44,7 +44,7 @@ public class SearchJPanel extends javax.swing.JPanel {
         btnSearch = new javax.swing.JButton();
         lblTitle = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(153, 255, 204));
+        setBackground(new java.awt.Color(204, 255, 255));
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(600, 402));
 
@@ -69,6 +69,7 @@ public class SearchJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblData);
 
+        lblSearch.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 12)); // NOI18N
         lblSearch.setText("Search Employee");
 
         txtSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +83,8 @@ public class SearchJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnSearch.setBackground(new java.awt.Color(153, 0, 0));
+        btnSearch.setBackground(new java.awt.Color(102, 255, 255));
+        btnSearch.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 12)); // NOI18N
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,16 +95,18 @@ public class SearchJPanel extends javax.swing.JPanel {
         lblTitle.setBackground(new java.awt.Color(102, 102, 0));
         lblTitle.setFont(new java.awt.Font("Trebuchet MS", 3, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("Human Resource");
+        lblTitle.setText("Employee Profile");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 835, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
+                        .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
@@ -110,25 +114,24 @@ public class SearchJPanel extends javax.swing.JPanel {
                                 .addGap(34, 34, 34)
                                 .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(340, 340, 340)
-                        .addComponent(lblTitle))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 835, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(321, 321, 321)
+                        .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblTitle)
-                .addGap(11, 11, 11)
+                .addGap(18, 18, 18)
+                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSearch))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSearch)
-                .addGap(36, 36, 36)
+                .addGap(38, 38, 38)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addContainerGap(162, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
